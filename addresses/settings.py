@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'rest_auth.registration',
 
-    'api',
     'users',
     'address_book',
 ]
