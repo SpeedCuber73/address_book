@@ -1,10 +1,13 @@
-from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 from .models import AddressBook
 from . import serializers
+from rest_framework import viewsets
+#  from .permissions import IsOwner
 
 
-class AddressBookListView(generics.ListCreateAPIView):
+class AddressBookViewSet(viewsets.ModelViewSet):
+
+    queryset = AddressBook.objects.all()
     serializer_class = serializers.AddressBookSerializer
     permission_classes = (IsAuthenticated,)
 
